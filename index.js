@@ -24,7 +24,7 @@ app.post('/merge', upload.array('pdfs', 2), async (req, res, next)=> {
     }
     else{
       await pdfmerger(path.join(__dirname,req.files[0].path),path.join(__dirname,req.files[1].path));
-      res.redirect(`http://localhost:${port}/static/merged.pdf`);
+      res.redirect(`/static/merged.pdf`);
     }
 })
 
